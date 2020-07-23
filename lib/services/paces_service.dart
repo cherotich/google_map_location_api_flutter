@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 class PlaceService {
-  final key = 'AIzaSyAC821_UW7ypXPKnvdJqkDel3iy6f0yloI';
+  final key = 'your key';
 
 Future<List<Place>> getPlaces(double lat,double lng,BitmapDescriptor icon) async{
   var response = await http.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&type=parking&rankby=distance&key=$key');

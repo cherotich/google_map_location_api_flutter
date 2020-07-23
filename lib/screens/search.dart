@@ -36,7 +36,7 @@ class Search extends StatelessWidget {
                                 initialCameraPosition: CameraPosition(
                                     target: LatLng(currentPosition.latitude,
                                         currentPosition.longitude),
-                                    zoom: 16.0),
+                                    zoom: 14.0),
                                 zoomGesturesEnabled: true,
                                 markers: Set<Marker>.of(markers),
                               ),
@@ -91,7 +91,7 @@ class Search extends StatelessWidget {
                                             builder: (context, meters, widget) {
                                               return (meters != null)
                                                   ? Text(
-                                                      '${places[index].vicinity}\u00b7 ${(meters / 1609).round()} mi')
+                                                      '${places[index].vicinity}\u00b7 ${(meters / 1000).toStringAsFixed(1)} km')
                                                   : Container();
                                             },
                                           )
